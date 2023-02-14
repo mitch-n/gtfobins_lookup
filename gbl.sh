@@ -18,7 +18,6 @@ fi
 
 cat $1 | while read line
 do
-	
 	tool_name=$(echo $line | rev | cut -d "/" -f1 | rev)
 	tool_path="$gtfobins_dir/$tool_name.md"
 	if [ -f "$tool_path" ]
@@ -26,7 +25,6 @@ do
 		echo $line
 		cat $tool_path | sed 's/^/    /'
 		echo ""
-	fi
-	
+	fi	
 done
 
